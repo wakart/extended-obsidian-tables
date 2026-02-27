@@ -1,8 +1,9 @@
 {
   "id": "extended-obsidian-tables",
-  "name": "Extended tables",
+  "name": "Extended Tables",
   "version": "0.1.0",
   "minAppVersion": "1.11.0",
-  "description": "",
-  "isDesktopOnly": false
+  "description": "Spreadsheet-like formulas inside Markdown tables for Obsidian.",
+  "isDesktopOnly": false,
+  "js": "main.js"
 }
