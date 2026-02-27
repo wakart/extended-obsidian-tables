@@ -34,5 +34,4 @@ bump:
 	@echo "Bumping $(TYPE) version..."
 	@VERSION=$$(node -p "require('semver').inc(require('./manifest.json').version,'$(TYPE)')"); \
 	echo "New version: $$VERSION"; \
-	export npm_package_version=$$VERSION; \
-	docker compose run --rm plugin node version-bump.mjs
+	docker compose run --rm -e npm_package_version=$$VERSION plugin node version-bump.mjs

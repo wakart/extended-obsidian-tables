@@ -1,8 +1,32 @@
-/*
+table {
+  counter-reset: tr-counter;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+thead {
+  counter-reset: col-counter;
+}
 
-If your plugin does not need CSS, delete this file.
+thead th {
+  counter-increment: col-counter;
+  position: relative;
+  overflow: visible !important;
+}
 
-*/
+thead th::before {
+  content: counter(col-counter, upper-alpha);
+  opacity: 0.3;
+  width: 100%;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: -22px;
+  left: 0;
+}
+
+tr::before {
+  counter-increment: tr-counter;
+  content: counter(tr-counter);
+  margin-right: 5px;
+  vertical-align: sub;
+  opacity: 0.3;
+}
